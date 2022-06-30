@@ -1,0 +1,63 @@
+{% extends 'partials/base.html'%}
+{% block title %}Provider Page{% endblock %}
+{% load crispy_forms_tags %}
+
+{%block content%}
+{% include 'partials/topnav.html'%}
+ <!--Table-->
+ <div class="container">
+    <div class="row my-4">
+       <div class="col-md-18">
+          
+       <table class="table table-striped ">
+         <thead>
+           <tr class="TBG">
+            
+             <th scope="col">Company</th>
+             <th scope="col">Email</th>
+             <th scope="col">Phone</th>
+             <th scope="col">Address</th>
+             <th scope="col">WEBSITE</th>
+             <th scope="col">MANAGE</th>
+           </tr>
+         </thead>
+         <tbody>
+           {% for prov in prov %}
+           <tr>
+            
+             <td>{{prov.p_name}}</td>
+             <td>{{prov.p_mail}}</td>
+             <td>{{prov.p_phone}}</td>
+             <td>{{prov.p_ados}}</td>
+             <td>{{prov.p_web}}</td>
+             <td>
+               <a class="EBTN btn-sm" href="{%url 'dashboard-provider-update' prov.id%}">Edit</a>
+               <a class="DBTN btn-sm" href="{%url 'dashboard-provider-delete' prov.id%}">Delete</a>
+             </td>
+           </tr>
+          
+         </tbody>
+         {%endfor%}
+       </table>
+      </div>
+      <div class="col-md-6">
+        <div class="border p-3 ADDB">
+          <h4>Add Provider</h4>
+          <hr>
+          <form method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+             
+
+            <input class="btn btn-block" type="submit" value="Add Provider">
+          </form>
+
+        </div>
+      </div>
+     
+    </div>
+    
+</div>
+
+<!--END table-->
+{%endblock%}

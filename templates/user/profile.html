@@ -1,0 +1,67 @@
+{% extends 'partials/base.html'%}
+{% block title %}Login Page{% endblock %}
+{% load crispy_forms_tags %}
+
+
+{%block content %}
+
+ <div class="container">
+    <div class="row my-5">
+      <div class="col-md-2"></div>
+
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header cardosH">Profile </div>
+          <div class="card-dody">
+            <div class="row">
+              <div class="col-md-8">
+                <span class="h4 col-md-2 margonos"></span>
+                <a class="btn btn-sm text-white float-right my-2" href="{%url 'user-profile-update' %}"
+                  >Edit info</a
+                >
+                
+                <div class="container">
+                  <div class="row my-5">
+                      
+                     <table class=" table table-borderless">
+                
+                         </thead>
+                         <tbody>
+                           <tr>
+                             <th scope="row">Name</th>
+                             <td>{{user.username}}</td>
+                           </tr>
+                           <tr>
+                            <th scope="row">Email</th>
+                            <td>{{user.email}}</td>                              
+                          </tr>
+                           <tr>
+                             <th scope="row">Phone</th>
+                             <td>{{ user.profile.phone }}</td>
+                            </tr>
+                           <tr>
+                             <th scope="row">Adress</th>
+                             <td>{{ user.profile.address }}</td>
+                             
+                            
+                            
+                           </tr>
+                         </tbody>
+                       </table>
+                  </div>
+              </div>
+              </div>
+              <div class="col-md-4">
+                <img class="img-thumbnail" src="{{ user.profile.image.url }}" alt="">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+{%endblock%}

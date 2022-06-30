@@ -1,0 +1,47 @@
+.cardos:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+  }
+  
+  body {
+      background: rgba(235, 235, 235, 0.781);
+  }
+  
+  .cardosH{
+      background-color: rgba(0, 0, 0, 0.726);
+      color: rgb(255, 255, 255);
+      font-size: 20px;
+      
+      
+  }
+  .TBG{
+  color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.726) ;
+  font-size: 17px;
+  }
+  
+  .btn{
+      background: rgb(122, 106, 106);
+      font-size: 15px;
+  }
+  .ADDB{
+      background: rgb(200, 200, 200);
+  }
+  
+  .DBTN{
+      background: rgb(177, 177, 177);
+       color: red;
+         text-decoration:none;
+  }
+  .EBTN{
+      background: rgb(200, 200, 200);
+  }
+  .BTNHOV:hover{
+      text-decoration:none;
+  }
+  
+  .TBGG{
+      color: whitesmoke;
+      background-color: rgba(0, 0, 0, 0.726) ;
+      font-size: 25px;
+      }

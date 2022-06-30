@@ -1,0 +1,42 @@
+{% extends 'partials/base.html'%}
+{% block title %}Staff Page{% endblock %}
+
+
+{%block content%}
+{% include 'partials/topnav.html'%}
+ <!--Table-->
+ <div class="container">
+  <div class="row my-5">
+      
+     <table class="table table-striped">
+         <thead>
+           <tr class="TBG">
+            
+            <th scope="col"></th>
+            <th scope="col">UserName</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Manage</th>
+           
+           </tr>
+         </thead>
+         <tbody>
+          {% for workers in workers %}
+           <tr>
+            <th scope="row"><a class="btn text-white btn-sm"  href="{% url 'dashboard-staff-detail' workers.id %}">View</a></th>
+            <td>{{ workers.username }}</td>
+            <td>{{ workers.profile.phone }}</td>
+            <td>{{ workers.email }}</td>
+             <td>
+               <a class="DBTN btn-sm" href="{% url 'dashboard-staff-delete' workers.id %}">Delete</a>
+             </td>
+
+           </tr>
+            {%endfor%}
+         </tbody>
+       </table>
+  </div>
+</div>
+
+<!--END table-->
+{%endblock%}

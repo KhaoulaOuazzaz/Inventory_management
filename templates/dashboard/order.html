@@ -1,0 +1,49 @@
+{% extends 'partials/base.html'%}
+{% block title %}Order Page{% endblock %}
+
+{%block content%}
+{% include 'partials/topnav.html'%}
+ <!--Table-->
+ <div class="container">
+    <div class="row my-5">
+        
+       <table class="table table-striped">
+           <thead>
+             <tr class="TBG">
+              
+               <th scope="col">Product </th>
+               <th scope="col">Caterogry</th>
+               <th scope="col">Quantity</th>
+               <th scope="col">Ordered By</th>
+               <th scope="col">Date</th>
+               <th scope="col">Current State</th>
+               <th scope="col">Change Status</th>
+             
+             </tr>
+           </thead>
+           <tbody>
+             {% for orders in orders %}
+             <tr>
+            
+               <td>{{orders.product}}</td>
+               <td>{{orders.product.category}}</td>
+               <td>{{orders.order_quantity}}</td>
+               <td>{{orders.staff.username}}</td>
+               <td>{{orders.date}}</td>
+               <td>{{orders.state}}</td>
+             
+               <td>
+                 <a class="EBTN btn-sm" href="{%url 'dashboard-order-update' orders.id%}">Edit State</a>
+                 <a class="DBTN btn-sm" href="{%url 'dashboard-order-delete' orders.id%}">Delete</a>
+               </td>
+
+             </tr>
+              {%endfor%}
+           </tbody>
+         </table>
+    </div>
+</div>
+
+<!--END table-->
+
+{%endblock%}

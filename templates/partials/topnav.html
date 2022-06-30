@@ -1,0 +1,57 @@
+ <!--TOPSIDE-->
+ <div class="container ">
+    <div class="row mt-4">
+          <div class="col-md-4 ">
+              <div class="card-header cardosH ">
+                  Information
+              </div>
+              <div class="card-body ">
+                 <marquee behavior="" direction="">
+                     <h3>CURRENT STATS </h3>
+                 </marquee>
+              </div>
+          </div>
+          <div class="col-md-11 ">
+            <div class="card-header cardosH ">
+                Statististics
+            </div>
+            <div class="card-body ">
+              <div class="row">
+                  <div class="col-md 4 p-3">
+                      <a class="text-decoration-none text-dark" href="{% url 'dashboard-provider' %}">
+                          <div class="card text-center cardos p-3 shadow">
+                              <h4>Providers <i class="fas fa-truck-moving"></i></h4>
+                              <h3>{{providers_count}}</h3>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="col-md 4 p-3">
+                    <a class="text-decoration-none text-dark" href="{% url 'dashboard-staff' %}">
+                        <div class="card text-center cardos p-3 shadow">
+                            <h4>Clients <i class="fas fa-users"></i></h4>
+                            <h3>{{ workers_count }}</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md 4 p-3">
+                    <a class="text-decoration-none text-dark" href="{% url 'dashboard-product' %}">
+                        <div class="card text-center cardos p-3 shadow">
+                            <h4>Products <i class="fab fa-product-hunt"></i></h4>
+                            <h3>{{products_count}}</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md 4 p-3">
+                    <a class="text-decoration-none text-dark" href="{% url 'dashboard-order' %}">
+                        <div class="card text-center cardos p-3 shadow">
+                            <h4>Orders<i class="fas fa-cart-arrow-down"></i></h4>
+                            <h3>{{orders_count}}</h3>
+                        </div>
+                    </a>
+                </div>
+              </div>
+            </div>
+        </div> 
+    </div>
+</div>
+<!--ENDTOPSIDE-->
